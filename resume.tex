@@ -1,0 +1,42 @@
+\documentclass[paper=a4,fontsize=12pt]{scrartcl}
+
+% packages
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage{geometry}
+\usepackage{url}
+
+% No pagenumbers/headers/footers
+\pagestyle{empty}
+\geometry{left=1.5cm, top=1cm, right=1.5cm, bottom=1.8cm, footskip=.5cm}
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%                      % Change font of \section command
+    \usefont{OT1}{phv}{b}{n}%       % bch-b-n: CharterBT-Bold font
+    \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+% macros
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}          % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}       % Vertical space macro
+
+\newcommand{\Name}[1]{\Huge \usefont{OT1}{phv}{b}{n} \hfill #1 \par \normalsize \normalfont}
+\newcommand{\Part}[1]{\section*{\uppercase{#1}}}
+
+\begin{document}
+
+\Name{Lawrence Pan}
+
+\sepspace
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\Part{Work experience}{}
+
+\end{document}
