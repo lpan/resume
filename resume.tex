@@ -1,4 +1,4 @@
-\documentclass[paper=a4,fontsize=12pt]{scrartcl}
+\documentclass[paper=a4,fontsize=13pt]{scrartcl}
 
 % packages
 \usepackage[english]{babel}
@@ -7,36 +7,76 @@
 \usepackage{graphicx}
 \usepackage[svgnames]{xcolor}
 \usepackage{geometry}
-\usepackage{url}
+\usepackage{mfirstuc}
+\usepackage{anyfontsize}
 
-% No pagenumbers/headers/footers
+\usepackage[hidelinks]{hyperref}
+
 \pagestyle{empty}
 \geometry{left=1.5cm, top=1cm, right=1.5cm, bottom=1.8cm, footskip=.5cm}
 
-%%% Custom sectioning (sectsty package)
-%%% ------------------------------------------------------------
+% set default font
+\renewcommand{\familydefault}{\sfdefault}
+
 \usepackage{sectsty}
+\sectionfont{
+  \sectionrule{0pt}{0pt}{-7pt}{2pt}
+}
 
-\sectionfont{%                      % Change font of \section command
-    \usefont{OT1}{phv}{b}{n}%       % bch-b-n: CharterBT-Bold font
-    \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+% fat cdot
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
 
-% macros
-\newlength{\spacebox}
-\settowidth{\spacebox}{8888888888}          % Box to align text
-\newcommand{\sepspace}{\vspace*{1em}}       % Vertical space macro
+% macros ------------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------
 
-\newcommand{\Name}[1]{\Huge \usefont{OT1}{phv}{b}{n} \hfill #1 \par \normalsize \normalfont}
-\newcommand{\Part}[1]{\section*{\uppercase{#1}}}
+% helpers
+\newcommand{\quarterspace}{\vspace*{0.25em}}
+\newcommand{\halfspace}{\vspace*{0.5em}}
+\newcommand{\fullspace}{\vspace*{1em}}
 
+% header
+\newcommand{\http}[1]{\href{http://#1}{#1}}
+\newcommand{\https}[1]{\href{https://#1}{#1}}
+\newcommand{\email}[1]{\normalsize \hfill #1 \par}
+
+% body
+\newcommand{\Part}[1]{\section*{\capitalisewords{#1}}}
+
+% skills
+\newcommand*{\newsummary}[2]{
+  \noindent\hangafter=0
+  {\capitalisewords{\textbf{#1}}: #2 \par}
+}
+
+% document ----------------------------------------------------------------------------
+% -------------------------------------------------------------------------------------
 \begin{document}
 
-\Name{Lawrence Pan}
+{\fontsize{35}{40}\selectfont \hfill Lawrence Pan \par}
+\halfspace
 
-\sepspace
+{\normalsize \hfill lawrence.pan@edu.uwaterloo.ca \par}
+{\normalsize \hfill \http{lpan.io} $\bigcdot$ \https{github.com/lpan} \par}
 
-%%% Work experience
-%%% ------------------------------------------------------------
-\Part{Work experience}{}
+\Part{Summary}{}
+\newsummary{languages}{Golang, Ruby, Python, C/C++, Clojure, Scala}
+\quarterspace
+\newsummary{technologies}{Redis, Postgres, MongoDB, gRPC, Envoy, Consul}
+\quarterspace
+\newsummary{books}{
+  \href{http://dataintensive.net/}{\underline{Designing Data-Intensive Applications}},
+  \href{https://landing.google.com/sre/book.html}{\underline{Site Reliability Engineering}}
+}
+
+\Part{work experience}{}
+
+\halfspace
+\Part{writings}{}
+
+\halfspace
+\Part{education}{}
 
 \end{document}
