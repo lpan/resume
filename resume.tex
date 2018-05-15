@@ -1,4 +1,4 @@
-\documentclass[paper=a4,fontsize=13pt]{scrartcl}
+\documentclass[paper=a4,fontsize=14pt]{scrartcl}
 
 % packages
 \usepackage[english]{babel}
@@ -9,19 +9,23 @@
 \usepackage{geometry}
 \usepackage{mfirstuc}
 \usepackage{anyfontsize}
-
+\usepackage{soul}
+\usepackage{setspace}
+\usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{wrapfig}
+
+\titlespacing*{\section}
+{0pt}{2.5ex plus 1ex minus .2ex}{1.0ex plus .2ex}
+
+\setul{2pt}{.4pt}% 1pt below contents
 
 \pagestyle{empty}
-\geometry{left=1.5cm, top=1cm, right=1.5cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.2cm, top=1.2cm, right=1.2cm, bottom=1.2cm, footskip=.5cm}
 
 % set default font
 \renewcommand{\familydefault}{\sfdefault}
-
-\usepackage{sectsty}
-\sectionfont{
-  \sectionrule{0pt}{0pt}{-7pt}{2pt}
-}
 
 % fat cdot
 \makeatletter
@@ -38,12 +42,9 @@
 \newcommand{\fullspace}{\vspace*{1em}}
 
 % header
-\newcommand{\http}[1]{\href{http://#1}{#1}}
-\newcommand{\https}[1]{\href{https://#1}{#1}}
+\newcommand{\http}[1]{\href{http://#1}{\ul{#1}}}
+\newcommand{\https}[1]{\href{https://#1}{\ul{#1}}}
 \newcommand{\email}[1]{\normalsize \hfill #1 \par}
-
-% body
-\newcommand{\Part}[1]{\section*{\capitalisewords{#1}}}
 
 % skills
 \newcommand*{\newsummary}[2]{
@@ -61,22 +62,70 @@
 {\normalsize \hfill lawrence.pan@edu.uwaterloo.ca \par}
 {\normalsize \hfill \http{lpan.io} $\bigcdot$ \https{github.com/lpan} \par}
 
-\Part{Summary}{}
+\section*{Summary}{}
 \newsummary{languages}{Golang, Ruby, Python, C/C++, Clojure, Scala}
 \quarterspace
 \newsummary{technologies}{Redis, Postgres, MongoDB, gRPC, Envoy, Consul}
 \quarterspace
 \newsummary{books}{
-  \href{http://dataintensive.net/}{\underline{Designing Data-Intensive Applications}},
-  \href{https://landing.google.com/sre/book.html}{\underline{Site Reliability Engineering}}
+  \href{http://dataintensive.net/}{\ul{Designing Data-Intensive Applications}},
+  \href{https://landing.google.com/sre/book.html}{\ul{Google - Site Reliability Engineering}}
 }
 
-\Part{work experience}{}
+\section*{Work Experience}{}
+\noindent \includegraphics[width=0.8cm, height=0.8cm]{assets/datadog.png}
+\noindent \href{https://datadoghq.com}{\textbf{\ul{Datadog}}}
+$\vert$ Distributed Systems Engineer Intern
+{\hfill \textit{Jan 2018 - Apr 2018}}
+\begin{itemize}[noitemsep,leftmargin=17pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
+  \item Took ownership of a critical service by ensuring its resiliency and
+    availability.
+  \item Proposed and implemented RPC deadline, cancellation, exponential backoff to protect
+    against cascading failures.
+\end{itemize}
 
-\halfspace
-\Part{writings}{}
+\fullspace
+\noindent \includegraphics[width=0.8cm, height=0.8cm]{assets/universe.png}
+\noindent \href{https://universe.com}{\ul{\textbf{Universe}}}
+$\vert$ Full-Stack Engineer Intern
+{\hfill \textit{May 2017 - Aug 2017}}
+\begin{itemize}[noitemsep,leftmargin=17pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
+  \item Worked with the platform team to release Universe’s first public GraphQL API.
+  \item Worked with designers and product managers to implement features with Rails and React.
+\end{itemize}
 
-\halfspace
-\Part{education}{}
+\fullspace
+\noindent \includegraphics[width=0.8cm, height=0.8cm]{assets/plotly.png}
+\noindent \href{https://plot.ly}{\textbf{\ul{Plotly}}}
+$\vert$ Front-End Engineer Intern
+{\hfill \textit{May 2016 - Aug 2016}}
+\begin{itemize}[noitemsep,leftmargin=17pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
+  \item Maintained and developed features for a large-scale React and Redux app.
+\end{itemize}
+
+\section*{Projects}{}
+{
+  \noindent \large
+  \href{https://github.com/lpan/viw}{\ul{lpan/viw}} | \normalsize \textit{
+    A light weight VI-like text editor written in C and ncurses
+  }
+}
+\begin{itemize}[noitemsep,leftmargin=17pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
+  \item \textbf{HackerNews front-paged}​ with 273​ upvotes and 195​ GitHub stars.
+  \item Designed and implemented an undo algorithm inspired by log-based replication​.
+\end{itemize}
+
+
+\section*{Writings}{}
+\begin{itemize}[noitemsep,leftmargin=17pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
+  \item Lessons learned from writing a text editor in C: \http{lpan.io/what-i-learnt-from-viw}
+  \item How gRPC improves reliability and fault tolerance: \http{lpan.io/coming-soon}
+\end{itemize}
+
+\section*{Education}{}
+\noindent \textbf{University of Waterloo} Bachelor of Software Engineering \par
+\normalsize
+\noindent \textit{Sep 2016 - May 2021 (expected)} \par
+\noindent 3.9/4.0 GPA, \textit{Dean's Honours List}
 
 \end{document}
