@@ -1,4 +1,5 @@
 *.pdf
+_region_.tex
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
