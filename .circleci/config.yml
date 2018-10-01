@@ -2,8 +2,11 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: circleci/python:2.7-jessie
     steps:
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
       - checkout
       - run:
           name: Upload PDF to S3
