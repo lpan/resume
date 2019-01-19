@@ -45,7 +45,7 @@
 % header
 \newcommand{\http}[1]{\href{http://#1}{\ul{#1}}}
 \newcommand{\https}[1]{\href{https://#1}{\ul{#1}}}
-\newcommand{\email}[1]{\normalsize \hfill #1 \par}
+\newcommand{\email}[1]{\href{mailto:#1}{\ul{#1}}}
 
 % skills
 \newcommand*{\newsummary}[2]{
@@ -62,7 +62,7 @@
   \halfspace
 
   {\normalsize
-    lawrencefeipan@gmail.com
+    \email{lawrencefeipan@gmail.com}
     $\bigcdot$ \http{lpan.io}
     $\bigcdot$ \https{github.com/lpan}
     \par}
@@ -71,7 +71,7 @@
 \section*{Summary}{}
 \newsummary{languages}{Golang, Python, Java, Scala, JavaScript, C/C++}
 \quarterspace
-\newsummary{interests}{Distributed systems, Streaming architecture, Cloud-native infrastructure}
+\newsummary{interests}{Distributed systems, Cloud-native infrastructure, Streaming architecture}
 \quarterspace
 \newsummary{technologies}{Kubernetes, Linux Kernel, Spark, Postgres, Kafka, Consul, Envoy}
 
@@ -100,7 +100,7 @@ $\vert$ \small Distributed Systems Engineer Intern
   \small
   \item Worked on the metrics submission pipeline that streams \textbf{millions} of data
     points per second
-  \item Owned the time-series storage service written in Golang by ensuring its
+  \item Owned the time-series creation service written in Golang by ensuring its
     availability
   \item Migrated the service's IPC layer to gRPC. Implemented consistent hashing
     and request termination, details in
