@@ -15,6 +15,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{titlesec}
 \usepackage{wrapfig}
+\usepackage{sectsty}
+
+\sectionfont{\fontsize{19}{10}\selectfont}
 
 \titlespacing*{\section}
 {0pt}{2.5ex plus 1ex minus .2ex}{1.2ex plus .2ex}
@@ -49,7 +52,7 @@
 
 % skills
 \newcommand*{\newsummary}[2]{
-  \noindent\hangafter=0
+  \noindent\hangafter=0\small
   {\capitalisewords{\textbf{#1}}: #2 \par}
 }
 
@@ -87,15 +90,14 @@ $\vert$ \small Infrastructure Engineer Intern
     infrastructure changes
   \item Extended the existing deployment system to support pre-deploy smoke tests
   \item Contributed to the effort of instrumenting distributed tracing, and
-    implementing centralized authentication inside PlanGrid's
-    \textbf{Kubernetes} cluster
+    implementing centralized authentication inside PlanGrid's Kubernetes cluster
 \end{itemize}
 
 \fullspace
 \noindent \includegraphics[width=0.7cm, height=0.7cm]{assets/datadog.png}
 \normalsize
 \noindent \href{https://datadoghq.com}{\textbf{\ul{Datadog}}}
-$\vert$ \small Distributed Systems Engineer Intern
+$\vert$ \small Software Engineer Intern - Distributed Systems
 {\hfill \footnotesize \textit{Jan 2018 - Apr 2018}}
 \begin{itemize}[noitemsep,leftmargin=20pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
   \small
