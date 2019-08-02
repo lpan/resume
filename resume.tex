@@ -17,7 +17,7 @@
 \usepackage{wrapfig}
 \usepackage{sectsty}
 
-\sectionfont{\fontsize{19}{10}\selectfont}
+\sectionfont{\fontsize{18}{10}\selectfont}
 
 \titlespacing*{\section}
 {0pt}{2.5ex plus 1ex minus .2ex}{1.2ex plus .2ex}
@@ -41,8 +41,10 @@
 % -------------------------------------------------------------------------------------
 
 % helpers
+\newcommand{\smolboispace}{\vspace*{0.1em}}
 \newcommand{\quarterspace}{\vspace*{0.25em}}
 \newcommand{\halfspace}{\vspace*{0.5em}}
+\newcommand{\bighalfspace}{\vspace*{0.75em}}
 \newcommand{\fullspace}{\vspace*{1em}}
 
 % header
@@ -71,74 +73,82 @@
     \par}
 \end{center}
 
-\section*{Summary}{}
-\newsummary{languages}{Golang, Python, Java, Scala, JavaScript, C/C++}
-\quarterspace
-\newsummary{interests}{Distributed systems, Data infrastructure, Streaming architecture}
-\quarterspace
-\newsummary{technologies}{Kubernetes, Linux Kernel, Spark, Postgres, Kafka, Consul, Envoy}
+\newsummary{interests}{Distributed systems, Large-scale data processing/storage
+  systems, Algorithms}
+\smolboispace
+\newsummary{languages}{Scala, Java, Golang, Python, JavaScript, C/C++}
 
 \section*{Experience}{}
-\noindent \includegraphics[width=0.7cm, height=0.7cm]{assets/plangrid.png}
+\normalsize
+\noindent \href{https://twitter.com.com}{\textbf{\ul{Twitter}}}
+$\vert$ \small Software Engineering Intern
+{\hfill \footnotesize \textit{May 2019 - Present}}
+\begin{itemize}[noitemsep,leftmargin=20pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
+  \small
+  \item Designed and implemented a system (in Scala) on top of Hive Metastore
+    that made Presto and Hive at Twitter GDPR-compliant.
+  \item Adding two-phase commit support to Apache Heron (Twitter's stream
+    processing engine), to enable end-to-end exactly-once delivery semantic. (in
+    progress)
+\end{itemize}
+
+\bighalfspace
 \normalsize
 \noindent \href{https://plangrid.com}{\textbf{\ul{PlanGrid}}}
-$\vert$ \small Software Engineer Intern - Infrastructure
+$\vert$ \small DevOps/Infrastructure Engineering Intern
 {\hfill \footnotesize \textit{Sep 2018 - Dec 2018}}
 \begin{itemize}[noitemsep,leftmargin=20pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
   \small
   \item Implemented centralized authentication and path-based routing in
     PlanGrid's Kubernetes cluster using Envoy and Istio. This greatly improved
-    developer productivity
+    developer productivity.
   \item Built Spinnaker pipelines to allow \textit{phased rollout} for
-    ingress-related infrastructure changes
+    ingress-related infrastructure changes.
   \item Contributed to the effort of instrumenting distributed tracing to
-    improve visibility
+    improve visibility.
 \end{itemize}
 
-\fullspace
-\noindent \includegraphics[width=0.7cm, height=0.7cm]{assets/datadog.png}
+\bighalfspace
 \normalsize
 \noindent \href{https://datadoghq.com}{\textbf{\ul{Datadog}}}
-$\vert$ \small Software Engineer Intern - Distributed Systems
+$\vert$ \small Software Engineering Intern
 {\hfill \footnotesize \textit{Jan 2018 - Apr 2018}}
 \begin{itemize}[noitemsep,leftmargin=20pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
   \small
-  \item Worked on the metrics submission pipeline that streams \textbf{millions} of data
-    points per second
+  \item Worked on the metrics submission pipeline that streams millions of data
+    points per second.
   \item Owned the time-series creation service written in Golang by ensuring its
-    availability
+    availability.
   \item Migrated the service's IPC layer to gRPC to improve reliability.
     Implemented consistent hashing and request termination, details in
-    \href{http://lpan.io/migrating-to-grpc}{\ul{blog post}}
+    \href{http://lpan.io/migrating-to-grpc}{\ul{blog post}}.
 \end{itemize}
 
-\fullspace
-\noindent \includegraphics[width=0.7cm, height=0.7cm]{assets/universe.png}
+\bighalfspace
 \normalsize
 \noindent \href{https://universe.com}{\ul{\textbf{Universe}}}
-$\vert$ \small Full-Stack Engineer Intern
+$\vert$ \small Software Engineering Intern (product)
 {\hfill \footnotesize \textit{May 2017 - Aug 2017}}
 \begin{itemize}[noitemsep,leftmargin=20pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
   \small
-  \item Developed numerous business-critical, A/B-tested, user-facing features
-    using React and Rails
+  \item Developed many business-critical, A/B-tested, user-facing features
+    using React and Rails.
   \item Pioneered and shipped Universe's first front-end app that consumes its
-    new GraphQL API
+    new GraphQL API.
 \end{itemize}
 
-\fullspace
-\noindent \includegraphics[width=0.7cm, height=0.7cm]{assets/plotly.png}
+\bighalfspace
 \normalsize
 \noindent \href{https://plot.ly}{\textbf{\ul{Plotly}}}
-$\vert$ \small Front-End Engineer Intern
+$\vert$ \small Software Engineering Intern (product)
 {\hfill \footnotesize \textit{May 2016 - Aug 2016}}
 \begin{itemize}[noitemsep,leftmargin=20pt,label=\raisebox{0.25ex}{\tiny$\bullet$},topsep=5pt]
   \small
   \item Maintained and developed features for a
     \href{https://plot.ly/online-chart-maker/}{\ul{massive SaaS app}} built with
-    React and Redux
+    React and Redux.
   \item Contributed to the development of an e2e testing framework written in
-    Python Selenium
+    Python Selenium.
 \end{itemize}
 
 \section*{Writings}{}
@@ -157,6 +167,6 @@ $\vert$ \small Front-End Engineer Intern
 \quarterspace
 \footnotesize
 \noindent \textit{Sep 2016 - May 2021 (expected)} \par
-\noindent 89.7\% cumulative GPA, \textit{Dean's Honours List}
+\noindent 90.3\% cumulative GPA, \textit{Dean's Honours List}
 
 \end{document}
